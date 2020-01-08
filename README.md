@@ -1,4 +1,4 @@
-# PopKitchen-Server
+# PopKitchen - Server
 
 ## Cloning This Repository
 
