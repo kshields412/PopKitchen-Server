@@ -3,7 +3,9 @@ package com.popkitchen.api.service;
 import com.popkitchen.api.model.User;
 import com.popkitchen.api.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserService {
 
     @Autowired

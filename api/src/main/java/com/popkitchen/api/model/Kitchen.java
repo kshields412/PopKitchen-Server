@@ -1,20 +1,24 @@
 package com.popkitchen.api.model;
 
+import com.popkitchen.api.enums.FoodType;
+import com.popkitchen.api.enums.PriceRange;
+import com.popkitchen.api.enums.Rating;
+
 import javax.persistence.Entity;
 
 @Entity
 public class Kitchen {
     private String kitchenName;
-    private String foodType;
-    private int rating;
-    private int priceRange;
+    private FoodType foodType;
+    private Rating rating;
+    private PriceRange priceRange;
     private String location;
     private int zipcode;
     private String description;
     private HoursOfOperation hoursOfOperation;
     private String phoneNumber;
 
-    public Kitchen(String kitchenName, String foodType, int rating, int priceRange, String location, int zipcode, String description, HoursOfOperation hoursOfOperation, String phoneNumber) {
+    public Kitchen(String kitchenName, FoodType foodType, Rating rating, PriceRange priceRange, String location, int zipcode, String description, HoursOfOperation hoursOfOperation, String phoneNumber) {
         this.kitchenName = kitchenName;
         this.foodType = foodType;
         this.rating = rating;
@@ -25,7 +29,7 @@ public class Kitchen {
         this.hoursOfOperation = hoursOfOperation;
         this.phoneNumber = phoneNumber;
     }
-    public Kitchen(String kitchenName, String foodType, int priceRange, String location, int zipcode, String description, HoursOfOperation hoursOfOperation, String phoneNumber) {
+    public Kitchen(String kitchenName, FoodType foodType, PriceRange priceRange, String location, int zipcode, String description, HoursOfOperation hoursOfOperation, String phoneNumber) {
         this.kitchenName = kitchenName;
         this.foodType = foodType;
         this.priceRange = priceRange;
@@ -36,7 +40,7 @@ public class Kitchen {
         this.phoneNumber = phoneNumber;
     }
 
-    public Kitchen(String kitchenName, String foodType, int rating, int priceRange, String location, int zipcode, String description, HoursOfOperation hoursOfOperation) {
+    public Kitchen(String kitchenName, FoodType foodType, Rating rating, PriceRange priceRange, String location, int zipcode, String description, HoursOfOperation hoursOfOperation) {
         this.kitchenName = kitchenName;
         this.foodType = foodType;
         this.rating = rating;
@@ -55,27 +59,27 @@ public class Kitchen {
         this.kitchenName = kitchenName;
     }
 
-    public String getFoodType() {
+    public FoodType getFoodType() {
         return foodType;
     }
 
-    public void setFoodType(String foodType) {
+    public void setFoodType(FoodType foodType) {
         this.foodType = foodType;
     }
 
-    public int getRating() {
+    public Rating getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(Rating rating) {
         this.rating = rating;
     }
 
-    public int getPriceRange() {
+    public PriceRange getPriceRange() {
         return priceRange;
     }
 
-    public void setPriceRange(int priceRange) {
+    public void setPriceRange(PriceRange priceRange) {
         this.priceRange = priceRange;
     }
 
