@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface KitchenRepository extends CrudRepository<Kitchen, Long> {
+    Kitchen findByKitchenName(String name);
 }

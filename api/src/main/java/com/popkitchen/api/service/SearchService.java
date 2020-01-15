@@ -2,6 +2,7 @@ package com.popkitchen.api.service;
 
 import com.popkitchen.api.dto.SearchDTO;
 import com.popkitchen.api.model.SearchRequest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
