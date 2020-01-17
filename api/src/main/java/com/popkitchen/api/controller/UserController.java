@@ -10,22 +10,22 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     @Autowired
-    private UserService service;
+    private UserService userService;
 
     @PostMapping()
     public ResponseEntity<?> createUser(@RequestBody User user){
-        return service.createUser(user);
+        return userService.createUser(user);
     }
 
     @DeleteMapping()
     public ResponseEntity<?> deleteUser(@RequestBody User user){
-        return service.deleteUser(user);
+        return userService.deleteUser(user);
     }
-//
-//    @PutMapping()
-//    public ResponseEntity<?> updateUser(@RequestBody){
-//
-//    }
+
+    @PutMapping()
+    public ResponseEntity<?> modifyUser(@RequestBody User user){
+        return userService.modifyUser(user);
+    }
 //
 //    @GetMapping()
 //    public ResponseEntity<?> getUser(@RequestBody){

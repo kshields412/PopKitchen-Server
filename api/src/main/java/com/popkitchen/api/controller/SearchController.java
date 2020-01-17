@@ -13,35 +13,35 @@ import org.springframework.web.bind.annotation.RestController;
 public class SearchController {
 
     @Autowired
-    private SearchService service;
+    private SearchService searchService;
 
     @GetMapping("/search/foodtype")
     public ResponseEntity <SearchDTO> searchByFoodType(@RequestBody SearchRequest request){
-        return service.searchByFoodType(request);
+        return searchService.searchByFoodType(request);
     }
 
     @GetMapping("/search/rating")
     public ResponseEntity <SearchDTO> searchByRating(@RequestBody SearchRequest request){
-        return service.searchByRating(request);
+        return searchService.searchByRating(request);
     }
 
     @GetMapping("/search/price-point")
     public ResponseEntity <SearchDTO> searchByPricePoint(@RequestBody SearchRequest request){
-        return service.searchByPricePoint(request);
+        return searchService.searchByPricePoint(request);
     }
 
     @GetMapping("/search/kitchen-name")
     public ResponseEntity<SearchDTO> searchByKitchenName(@RequestBody SearchRequest request) {
-        return service.searchByKitchenName(request);
+        return searchService.searchByKitchenName(request);
     }
 
     @GetMapping("/search/location")
     public ResponseEntity<SearchDTO> searchByLocation(@RequestBody SearchRequest request) {
-        return service.searchByLocation(request);
+        return searchService.searchByLocation(request);
     }
 
     @GetMapping("/search/zipcode")
     public ResponseEntity<SearchDTO> searchByZipcode(@RequestBody SearchRequest request){
-        return service.searchByZipcode(request);
+        return searchService.searchByZipcode(request);
     }
 }

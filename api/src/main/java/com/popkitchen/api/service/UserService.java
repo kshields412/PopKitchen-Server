@@ -47,4 +47,16 @@ public class UserService {
         }
         return response;
     }
+
+    public ResponseEntity<?> modifyUser(User user) {
+        ResponseEntity<?> response;
+        try{
+            userRepository.save(user);
+            response = new ResponseEntity<> (HttpStatus.OK);
+        } catch (Exception e){
+            response = new ResponseEntity<>("Cannot modify user, please try again.", HttpStatus.BAD_REQUEST);
+            e.printStackTrace();
+        }
+        return response;
+    }
 }
