@@ -32,10 +32,6 @@ public class UserService {
         return response;
     }
 
-    public User modifyTransaction(User user) {
-        return userRepository.save(user);
-    }
-
     public ResponseEntity<?> deleteUser(User user){
         ResponseEntity<?> response;
         try{
@@ -55,6 +51,18 @@ public class UserService {
             response = new ResponseEntity<> (HttpStatus.OK);
         } catch (Exception e){
             response = new ResponseEntity<>("Cannot modify user, please try again.", HttpStatus.BAD_REQUEST);
+            e.printStackTrace();
+        }
+        return response;
+    }
+
+    public ResponseEntity<?> getUserById(long userId) {
+        ResponseEntity<?> response;
+        try{
+            userRepository.findById(userId);
+            response = new ResponseEntity<> (HttpStatus.OK);
+        } catch (Exception e){
+            response = new ResponseEntity<>("Cannot find user, please try again.", HttpStatus.BAD_REQUEST);
             e.printStackTrace();
         }
         return response;

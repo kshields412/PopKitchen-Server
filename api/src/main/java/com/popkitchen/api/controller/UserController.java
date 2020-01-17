@@ -26,10 +26,10 @@ public class UserController {
     public ResponseEntity<?> modifyUser(@RequestBody User user){
         return userService.modifyUser(user);
     }
-//
-//    @GetMapping()
-//    public ResponseEntity<?> getUser(@RequestBody){
-//
-//    }
+
+    @GetMapping()
+    public ResponseEntity<?> getUser(@RequestParam long userId){
+        return userService.getUserById(userId);
+    }
 
 }
