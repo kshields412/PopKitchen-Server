@@ -12,15 +12,15 @@ public class UserController {
     @Autowired
     private UserService service;
 
-//    @PostMapping()
-//    public ResponseEntity<?> createUser(@RequestBody User user){
-//        return service.createUser(user);
-//    }
-//
-//    @DeleteMapping()
-//    public ResponseEntity<?> deleteUser(@RequestBody){
-//        return service.deleteUser();
-//    }
+    @PostMapping()
+    public ResponseEntity<?> createUser(@RequestBody User user){
+        return service.createUser(user);
+    }
+
+    @DeleteMapping()
+    public ResponseEntity<?> deleteUser(@RequestBody User user){
+        return service.deleteUser(user);
+    }
 //
 //    @PutMapping()
 //    public ResponseEntity<?> updateUser(@RequestBody){
