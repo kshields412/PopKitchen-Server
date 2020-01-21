@@ -12,24 +12,34 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping()
+    @PostMapping("/user/create")
     public ResponseEntity<?> createUser(@RequestBody User user){
         return userService.createUser(user);
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/user/remove")
     public ResponseEntity<?> deleteUser(@RequestBody User user){
         return userService.deleteUser(user);
     }
 
-    @PutMapping()
+    @PutMapping("/user/update")
     public ResponseEntity<?> modifyUser(@RequestBody User user){
         return userService.modifyUser(user);
     }
 
-    @GetMapping()
-    public ResponseEntity<?> getUserById(@RequestParam long userId){
-        return userService.getUserById(userId);
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<?> showUserById(@RequestParam long userId){
+        return userService.showUserById(userId);
+    }
+
+    @GetMapping("/user/{userName}")
+    public ResponseEntity<?> showUserByUserName(@PathVariable String userName){
+        return userService.showUserByUserName(userName);
+    }
+
+    @GetMapping("/user")
+    public ResponseEntity<?> showAll() {
+        return userService.showAll();
     }
 
 }

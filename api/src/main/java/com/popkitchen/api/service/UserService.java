@@ -36,7 +36,7 @@ public class UserService {
         ResponseEntity<?> response;
         try{
             userRepository.delete(user);
-            response = new ResponseEntity<> (HttpStatus.OK);
+            response = new ResponseEntity<>(HttpStatus.OK);
         } catch (Exception e){
             response = new ResponseEntity<>("Cannot delete user, please try again.", HttpStatus.BAD_REQUEST);
             e.printStackTrace();
@@ -48,7 +48,7 @@ public class UserService {
         ResponseEntity<?> response;
         try{
             userRepository.save(user);
-            response = new ResponseEntity<> (HttpStatus.OK);
+            response = new ResponseEntity<>(HttpStatus.OK);
         } catch (Exception e){
             response = new ResponseEntity<>("Cannot modify user, please try again.", HttpStatus.BAD_REQUEST);
             e.printStackTrace();
@@ -56,13 +56,37 @@ public class UserService {
         return response;
     }
 
-    public ResponseEntity<?> getUserById(long userId) {
+    public ResponseEntity<?> showUserById(long userId) {
         ResponseEntity<?> response;
         try{
             userRepository.findById(userId);
-            response = new ResponseEntity<> (HttpStatus.OK);
+            response = new ResponseEntity<>(HttpStatus.OK);
         } catch (Exception e){
             response = new ResponseEntity<>("Cannot find user, please try again.", HttpStatus.BAD_REQUEST);
+            e.printStackTrace();
+        }
+        return response;
+    }
+
+    public ResponseEntity<?> showUserByUserName(String userName) {
+        ResponseEntity<?> response;
+        try{
+            userRepository.findByUserName(userName);
+            response = new ResponseEntity<>(HttpStatus.OK);
+        } catch (Exception e) {
+            response = new ResponseEntity<> ("Cannot find user, please try again.", HttpStatus.BAD_REQUEST);
+            e.printStackTrace();
+        }
+        return response;
+    }
+
+    public ResponseEntity<?> showAll() {
+        ResponseEntity<?> response;
+        try{
+            userRepository.findAll();
+            response = new ResponseEntity<>(HttpStatus.OK);
+        } catch (Exception e) {
+            response = new ResponseEntity<>("Cannot find all users, please try again.", HttpStatus.BAD_REQUEST);
             e.printStackTrace();
         }
         return response;
