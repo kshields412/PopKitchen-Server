@@ -56,7 +56,7 @@ public class UserService {
         return response;
     }
 
-    public ResponseEntity<?> showUserById(long userId) {
+    public ResponseEntity<?> findUserById(long userId) {
         ResponseEntity<?> response;
         try{
             userRepository.findById(userId);
@@ -68,7 +68,7 @@ public class UserService {
         return response;
     }
 
-    public ResponseEntity<?> showUserByUserName(String userName) {
+    public ResponseEntity<?> findUserByUserName(String userName) {
         ResponseEntity<?> response;
         try{
             userRepository.findByUserName(userName);
@@ -80,7 +80,7 @@ public class UserService {
         return response;
     }
 
-    public ResponseEntity<?> showAll() {
+    public ResponseEntity<?> findAll() {
         ResponseEntity<?> response;
         try{
             userRepository.findAll();

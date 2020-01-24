@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 
 @Entity
 public class Kitchen {
+    private Long id;
     private String kitchenName;
     private FoodType foodType;
     private Rating rating;

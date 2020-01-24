@@ -28,18 +28,18 @@ public class UserController {
     }
 
     @GetMapping("/user/{userId}")
-    public ResponseEntity<?> showUserById(@RequestParam long userId){
-        return userService.showUserById(userId);
+    public ResponseEntity<?> findUserById(@RequestParam long userId){
+        return userService.findUserById(userId);
     }
 
     @GetMapping("/user/{userName}")
-    public ResponseEntity<?> showUserByUserName(@PathVariable String userName){
-        return userService.showUserByUserName(userName);
+    public ResponseEntity<?> findUserByUserName(@PathVariable String userName){
+        return userService.findUserByUserName(userName);
     }
 
     @GetMapping("/user")
-    public ResponseEntity<?> showAll() {
-        return userService.showAll();
+    public ResponseEntity<?> findAll() {
+        return userService.findAll();
     }
 
 }

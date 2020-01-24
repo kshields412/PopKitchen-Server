@@ -1,6 +1,7 @@
 package com.popkitchen.api.model;
 
 import javax.persistence.Entity;
+import java.util.ArrayList;
 import java.util.Date;
 
 @Entity
@@ -12,6 +13,7 @@ public class User {
     private String password;
     private Date dateOfBirth;
     private String phoneNumber;
+    private ArrayList<Subscription> subscriptions;
 
     public User(String firstName, String lastName, String username, String email, String password, Date dateOfBirth, String phoneNumber) {
         this.firstName = firstName;
@@ -21,6 +23,7 @@ public class User {
         this.password = password;
         this.dateOfBirth = dateOfBirth;
         this.phoneNumber = phoneNumber;
+        this.subscriptions = subscriptions;
     }
 
     public String getFirstName() {
@@ -75,7 +78,9 @@ public class User {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
+
+    public ArrayList<Subscription> setSubscriptions(ArrayList<Subscription> subscriptions) {
+        this.subscriptions
     }
 }
