@@ -23,7 +23,6 @@ public class User {
         this.password = password;
         this.dateOfBirth = dateOfBirth;
         this.phoneNumber = phoneNumber;
-        this.subscriptions = subscriptions;
     }
 
     public String getFirstName() {
@@ -80,7 +79,9 @@ public class User {
 
     public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
 
-    public ArrayList<Subscription> setSubscriptions(ArrayList<Subscription> subscriptions) {
-        this.subscriptions
+    public void setSubscriptions(ArrayList<Subscription> subscriptions) {
+        this.subscriptions = subscriptions;
     }
+
+    public ArrayList<Subscription> getSubscriptions() { return subscriptions; }
 }
